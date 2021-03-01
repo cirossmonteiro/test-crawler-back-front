@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  dsb-postgres-compose:
+    # command:
+    #   - echo 'here'
+    image: postgres
+    environment:
+      POSTGRES_DB: "dsb_psql"
+      POSTGRES_USER: "dsb_django_admin"
+      POSTGRES_PASSWORD: "hk3g5hku3bvg2"
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - $HOME/docker-compose/PostgreSQL/:/var/lib/postgresql/data/
+    networks:
+      - dsb-postgres-compose-network
+      
+  dsb-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "cirossmonteiro@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "j54bk345bk34"
+    ports:
+      - "16544:80"
+    depends_on:
+      - dsb-postgres-compose
+    networks:
+      - dsb-postgres-compose-network
+
+networks: 
+  dsb-postgres-compose-network:
+    driver: bridge

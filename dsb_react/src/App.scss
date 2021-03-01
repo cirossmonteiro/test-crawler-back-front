@@ -1,0 +1,29 @@
+.root-tags {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 2px solid black;
+}
+
+tr {
+  cursor: pointer;
+  &:hover {
+    background:  lightgray;
+  }
+  // .cell {}
+}
+
+.pagination-item {
+  background: lightgray;
+  &:hover {
+    background: gray;
+  }
+  &.selected {
+    background: black;
+    color: white;
+  }
+  cursor: pointer;
+}
+
+.badge {
+  cursor: pointer;
+}
