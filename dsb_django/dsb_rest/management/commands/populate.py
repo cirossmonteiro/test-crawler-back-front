@@ -89,7 +89,7 @@ class Command(BaseCommand):
 
                 # check if news already exists in database
                 if News.objects.filter(url=link).exists():
-                    print(f'This news\'s already been saved.\nStopping collecting data from source {source['name']}')
+                    print(f"This news\'s already been saved.\nStopping collecting data from source {source['name']}")
                     break
 
                 # print('Downloading ')
