@@ -65,5 +65,3 @@ Remarks:
 - You can set an ordering when clicking in arrows located inside header cells, then it will also reset pagination.
 
 - Hours invested: 20~25 hours.
-
-- 
